@@ -1,12 +1,17 @@
 import express from "express";
+import dotenv from "dotenv";
+import proxy from "express-http-proxy";
+dotenv.config();
 
 const app = express();
 
-const PORT = 8000;
+const PORT = process.env.PORT || 6000;
 
 app.get('/', (req, res) => {
-    res.json({ "message": "Hello" })
+    res.json({ "message": "Hello from Gateway" });
 });
+
+app.use('/api/auth', proxy(process.env.AUTH_URL));
 
 app.listen(PORT, () => {
     console.log(`Gateway started: http://localhost:${PORT}/`);
