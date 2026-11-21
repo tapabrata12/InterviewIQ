@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import { connectMongoDB } from "./config/db.js";
 dotenv.config();
 
 const app = express();
@@ -11,5 +12,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Gateway started: http://localhost:${PORT}/`);
+    console.log(`Auth started: http://localhost:${PORT}/`);
+    connectMongoDB();
 });
