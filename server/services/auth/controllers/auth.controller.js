@@ -6,7 +6,7 @@ export const GoogleAuth = async (req, res) => {
     try {
 
         const { token } = req.body;
-        const decoded = await getAuth(app);
+        const decoded = await getAuth(app).verifyIdToken(token);
     } catch (error) {
 
     }
