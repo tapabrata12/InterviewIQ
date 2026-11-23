@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "We will install those packages will will be used to share or access via all different kind of services and may be gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Tapabrata Chowdhury",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "ioredis": "^6.0.0"
+  }
+}
