@@ -1,6 +1,6 @@
-import { app } from "../config/firebase";
+import { app } from "../config/firebase.js";
 import { getAuth } from "firebase-admin/auth";
-import userModel from "../models/user.model";
+import userModel from "../models/user.model.js";
 import redis from "../../../shared/redis/redis.js";
 import crypto from "crypto";
 import dotenv from "dotenv";
@@ -69,7 +69,7 @@ export const logOut = async (req, res) => {
             secure: process.env.COOKIE_SECURITY === "production",
             sameSite: "lax",
         });
-        
+
         res.status(200).json("Logged out Successfully");
     }
     catch (error) {
